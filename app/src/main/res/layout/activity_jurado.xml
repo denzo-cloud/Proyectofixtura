@@ -10,19 +10,19 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <LinearLayout
-            android:layout_marginTop="10mm"
+            android:layout_marginTop="5mm"
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <ImageView
-                android:layout_width="170dp"
-                android:layout_height="170dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:src="@mipmap/usuario1"
                 android:layout_gravity="center"/>
 
             <TextView
-                android:layout_marginTop="4mm"
+                android:layout_marginTop="1mm"
                 android:layout_width="86dp"
                 android:layout_height="33dp"
                 android:layout_gravity="center"
@@ -40,28 +40,29 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_marginTop="15mm"
+            android:layout_marginTop="5mm"
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <Button
+                android:id="@+id/iraequipos"
                 android:padding="10dp"
                 android:text="Verificar datos de Equipo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="25dp"
                 android:layout_marginLeft="25dp" />
-            <Button
+            <!--<Button
                 android:padding="10dp"
                 android:text="Inscribir Puntos"
                 android:layout_marginRight="25dp"
                 android:layout_marginLeft="25dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"/>-->
             <Button
                 android:id="@+id/iranosotros"
-                android:layout_marginTop="15dp"
-                android:padding="12dp"
+                android:layout_marginTop="40dp"
+                android:padding="10dp"
                 android:text="Cerrar Sesion"
                 android:layout_marginRight="25dp"
                 android:layout_marginLeft="25dp"

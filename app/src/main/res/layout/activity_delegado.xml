@@ -11,19 +11,19 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <LinearLayout
-            android:layout_marginTop="10mm"
+            android:layout_marginTop="5mm"
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <ImageView
-                android:layout_width="170dp"
-                android:layout_height="170dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:src="@mipmap/usuario1"
                 android:layout_gravity="center"/>
 
             <TextView
-                android:layout_marginTop="4mm"
+                android:layout_marginTop="1mm"
                 android:layout_width="86dp"
                 android:layout_height="33dp"
                 android:layout_gravity="center"
@@ -41,7 +41,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_marginTop="15mm"
+            android:layout_marginTop="5mm"
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent">

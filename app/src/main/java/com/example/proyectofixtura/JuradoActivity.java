@@ -23,5 +23,15 @@ public class JuradoActivity extends AppCompatActivity {
                 startActivity(u);
             }
         });
+
+        Button iraequipos= findViewById(R.id.iraequipos);
+
+        iraequipos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent u = new Intent( JuradoActivity.this, EquipoActivity.class);
+                startActivity(u);
+            }
+        });
     }
 }
