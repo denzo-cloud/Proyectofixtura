@@ -37,7 +37,7 @@ public class Equipo {
         return collection;
     }
 
-    public static void injectEquipoFromCloud(final QueueUtils.QueueObject o,
+    /*public static void injectEquipoFromCloud(final QueueUtils.QueueObject o,
                                              final Equipo equipo,
                                              final EquipoDetalleActivity _interface) {
         String url = "https://reqres.in/api/users/" + equipo.id;
@@ -67,12 +67,12 @@ public class Equipo {
                     }
                 });
         o.addToRequestQueue(jsonObjectRequest);
-    }
+    }*/
 
     public static void injectEquiposFromCloud(final QueueUtils.QueueObject o,
                                               final ArrayList<Equipo> equipos,
                                               final MainActivity _interface) {
-        String url = "https://protected-fjord-91518.herokuapp.com/api/equipos";
+        String url = "https://protected-fjord-91518.herokuapp.com/api/auth/equipos";
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
                 (Request.Method.GET, url, null,
                         new Response.Listener<JSONObject>() {
