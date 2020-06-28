@@ -5,11 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
     <ListView
-        android:id="@+id/equiposList"
+        android:id="@+id/desafiosList"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
     </ListView>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

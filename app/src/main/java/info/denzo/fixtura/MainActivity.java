@@ -2,66 +2,49 @@ package info.denzo.fixtura;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
+import android.app.DatePickerDialog;
+import android.app.Dialog;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
+import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.android.volley.toolbox.ImageLoader;
 
-import java.util.ArrayList;
+import org.json.JSONObject;
 
-import info.denzo.fixtura.adapters.EquipoAdaptador;
+import java.util.ArrayList;
+import java.util.Calendar;
+
+import info.denzo.fixtura.adapters.DesafioAdaptador;
 import info.denzo.fixtura.helpers.QueueUtils;
-import info.denzo.fixtura.models.Equipo;
+import info.denzo.fixtura.models.Desafio;
 
 public class MainActivity extends AppCompatActivity {
 
-    ListView equiposList;
-    EquipoAdaptador equipoAdaptador;
+    ListView desafiosList;
+    DesafioAdaptador desafioAdaptador;
     QueueUtils.QueueObject queue = null;
     ImageLoader queueImage = null;
-    ArrayList<Equipo> items;
+    ArrayList<Desafio> items;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        desafiosList = findViewById(R.id.desafiosList);
         queue = QueueUtils.getInstance(this.getApplicationContext());
         queueImage = queue.getImageLoader();
         items = new ArrayList<>();
-        // Item fue llenando desde la nuebe
-        Equipo.injectEquiposFromCloud(queue, items, this);
-
-        equiposList = findViewById(R.id.equiposList);
-        equipoAdaptador = new EquipoAdaptador(this, items, queueImage);
-        equiposList.setAdapter(equipoAdaptador);
-
-        equiposList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                // En esta area puedo solicitar mas datos a la nube
-                Equipo registro = items.get(position);
-                ShowDetails(registro);
-                /*Toast.makeText(MainActivity.this, "Persona " + registro.nombre,
-                        Toast.LENGTH_SHORT).show();*/
-            }
-        });
-
-    }
-
-    public void ShowDetails(Equipo item) {
-        Intent o = new Intent(this, EquipoDetalleActivity.class);
-        o.putExtra("equipoId", item.id);
-        startActivity(o);
-
+        Desafio.injectDesafiosFromCloud(queue, items, this);
+        desafioAdaptador = new DesafioAdaptador(this, items, queueImage);
+        desafiosList.setAdapter(desafioAdaptador);
     }
 
     public void refreshList(){
-        if ( equipoAdaptador != null ) {
-            equipoAdaptador.notifyDataSetChanged();
+        if ( desafioAdaptador!= null ) {
+            desafioAdaptador.notifyDataSetChanged();
         }
     }
 }
